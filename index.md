@@ -34,17 +34,13 @@ Autor: Tomasz Okoński
 		   
 		  function statusChangeCallback(response) {
 			if (response.status === 'connected') {
-			  testAPI();
+			  FB.api('/me', function(response) {
+				document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
+			});
 			} else {
 			  document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
 			}
 		  }		   
-		   
-		  function testAPI(){
-			FB.api('/me', function(response) {
-				document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
-			});			  
-		  }
 </script>
 <fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
