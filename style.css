@@ -1,0 +1,22 @@
+body{
+	width: 100%;
+	text-align: center;
+}
+div{
+	display: none;
+}
+iframe{
+	min-height: 800px;
+}
+.main{
+	display: block;
+	width: 79%;
+	float: left;
+	font-size: 20px;
+}
+.aside{
+	display: block;
+	width: 20%;
+	float: left;
+	font-size: 18px;
+}
