@@ -34,8 +34,9 @@
 					FB.api('/me', function(response) {
 						document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
 					});
-				} else {
-			  document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
+				} 
+				else {
+					document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
 				}
 			}	
 		</script>
@@ -49,6 +50,7 @@
 	</script>
 		<div class="main">
 			Facebook login
+			<br/>
 			Autor: Tomasz Okoński
 			<div id="status"></div>
 			<br/>
