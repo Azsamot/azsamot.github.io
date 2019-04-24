@@ -35,10 +35,14 @@
 				if (response.status === 'connected') {
 					FB.api('/me', function(response) {
 						document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
+						document.getElementById('login-button').style.display = 'none';
+						document.getElementById('logout-button').style.display = 'block';
 					});
 				} 
 				else {
 					document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
+					document.getElementById('login-button').style.display = 'block';
+					document.getElementById('logout-button').style.display = 'none';
 				}
 			}
 			
@@ -62,13 +66,15 @@
 			Autor: Tomasz Okoński
 			<div id="status"></div>
 			<br/>
-			<div id="button">
+			<div id="login-button">
 			<fb:login-button 
 			  scope="public_profile,email"
-			  onlogin="checkLoginState();"
-			  autologoutlink="true">
+			  onlogin="checkLoginState();">
 			</fb:login-button>
-			<div id="button">
+			</div>
+			<div id="logout-button">
+				<button onclick="logout()">Wyloguj się</button>
+			</div>
 		</div>
 	</body>
 </html>
