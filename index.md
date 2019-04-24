@@ -12,7 +12,9 @@ Autor: Tomasz Okoński
 			  version    : 'v3.2'
 			});
 			  
-			FB.AppEvents.logPageView();   
+			    FB.getLoginStatus(function(response) {
+				  statusChangeCallback(response);
+				}); 
 			  
 		  };
 
