@@ -25,20 +25,25 @@ Autor: Tomasz Okoński
 		   }(document, 'script', 'facebook-jssdk'));
 		   
 		  function statusChangeCallback(response) {
+			  alert("chuj");
 			if (response.status === 'connected') {
+				alert("dupa");
 			  testAPI();
 			} else {
-			  document.getElementById('status').innerHTML = 'Nie jesteś zalogowany ';
+				alert("chuj1212");
+			  document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
 			}
 		  }		   
 		   
 		  function checkLoginState() {
 			  FB.getLoginStatus(function(response) {
+				  alert("chu2131231j");
 				statusChangeCallback(response);
 			  });
 			}
 		  function testAPI(){
 			FB.api('/me', function(response) {
+				alert("wqerqwreq");
 				document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
 			});			  
 		  }
