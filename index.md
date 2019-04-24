@@ -26,6 +26,12 @@ Autor: Tomasz Okoński
 			 fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
 		   
+		  function checkLoginState() {
+			FB.getLoginStatus(function(response) {
+				statusChangeCallback(response);
+			  });
+		  }
+		   
 		  function statusChangeCallback(response) {
 			if (response.status === 'connected') {
 			  testAPI();
@@ -34,11 +40,6 @@ Autor: Tomasz Okoński
 			}
 		  }		   
 		   
-		  function checkLoginState() {
-			  FB.getLoginStatus(function(response) {
-				statusChangeCallback(response);
-			  });
-			}
 		  function testAPI(){
 			FB.api('/me', function(response) {
 				document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
