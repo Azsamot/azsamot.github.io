@@ -23,11 +23,25 @@ Autor: Tomasz Okoński
 			 js.src = "https://connect.facebook.net/en_US/sdk.js";
 			 fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
-		   function checkLoginState() {
+		   
+		  function statusChangeCallback(response) {
+			if (response.status === 'connected') {
+			  testAPI();
+			} else {
+			  document.getElementById('status').innerHTML = 'Nie jesteś zalogowany ';
+			}
+		  }		   
+		   
+		  function checkLoginState() {
 			  FB.getLoginStatus(function(response) {
 				statusChangeCallback(response);
 			  });
 			}
+		  function testAPI(){
+			FB.api('/me', function(response) {
+				document.getElementById('status').innerHTML = 'Zalogowano jako '+response.name;
+			});			  
+		  }
 </script>
 <fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
