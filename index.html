@@ -49,8 +49,13 @@
 	</script>
 		<div class="main">
 			Facebook login
+			Autor: Tomasz Okoński
+			<div id="status"></div>
 			<br/>
-			<button onclick="FB.login()">Zaloguj</button>
+			<fb:login-button 
+			  scope="public_profile,email"
+			  onlogin="checkLoginState();">
+			</fb:login-button>
 		</div>
 	</body>
 </html>
