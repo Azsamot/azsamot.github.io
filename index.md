@@ -29,8 +29,7 @@ Autor: Tomasz Okoński
 			  });
 			}
 </script>
-//<div class="fb-login-button" data-size="medium" data-button-type="login_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+<fb:login-button scope="public_profile" onlogin="checkLoginState();">
 </fb:login-button>
 
 <div id="status">
