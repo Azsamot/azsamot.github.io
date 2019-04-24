@@ -40,7 +40,13 @@
 				else {
 					document.getElementById('status').innerHTML = 'Nie jesteś zalogowany';
 				}
-			}	
+			}
+			
+			function logout() {
+				FB.logout(function(response) {
+					checkLoginState();
+				});
+			}
 		</script>
 		<meta charset="UTF-8">
 		<title>
@@ -56,10 +62,13 @@
 			Autor: Tomasz Okoński
 			<div id="status"></div>
 			<br/>
+			<div id="button">
 			<fb:login-button 
 			  scope="public_profile,email"
-			  onlogin="checkLoginState();">
+			  onlogin="checkLoginState();"
+			  autologoutlink="true">
 			</fb:login-button>
+			<div id="button">
 		</div>
 	</body>
 </html>
