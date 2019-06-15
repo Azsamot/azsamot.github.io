@@ -1,11 +1,5 @@
 <?php
-function toPolish()
-{
-	header('Location: index.html');
-}
-
-function toEnglish()
-{
-	header('Location: index_en.html');
-}
+echo "Dzisiaj jest: ";
+$dzis = date("d/m/Y");
+echo $dzis;
 ?>
