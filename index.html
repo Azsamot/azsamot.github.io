@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php require("../Kontroler/KontrolerPWI.php") ?>
 <head>
 
   <meta charset="utf-8">
@@ -38,7 +38,7 @@
 			<button class="btn btn-primary" id="menu-toggle">Menu</button>
 		</div>
 		<div class="btn-group" role="group" aria-label="Second group">
-			<button class="btn btn-primary" id="change-language" action="<?php require("../Kontroler/KontrolerPWI.php"); toEnglish();?>">English</button>
+			<button class="btn btn-primary" id="change-language" action="<?php toEnglish() ?>">English</button>
 		</div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
